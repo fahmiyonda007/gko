@@ -11,12 +11,9 @@
 
 Admin panel, form builder and table builder for Laravel. Built with the TALL stack. Designed for humans.
 
-
-
 # Project Planning Management System
 
 A brief description of what this project does and who it's for Property Project
-
 
 ## Installation
 
@@ -39,6 +36,7 @@ php artisan migrate
 ```
 
 generate policy and permission by [Filament Shield](https://filamentphp.com/plugins/shield):
+
 ```bash
 php artisan shield:install --fresh
 ```
@@ -54,17 +52,16 @@ php artisan shield:super-admin
 optional for optimize:
 
 ```bash
-php artisan optimize:clear 
+php artisan optimize:clear
 ```
 
 Run:
+
 ```bash
 npm run build && php artisan serve
 ```
 
-
-
-##  [Laravel - Filament](https://filamentphp.com/)
+## [Laravel - Filament](https://filamentphp.com/)
 
 create migration file OR Generate migration file from existing table:
 
@@ -73,39 +70,40 @@ php artisan migrate:generate --tables="banks"
 ```
 
 Create model and setup manually your field:
+
 ```bash
 php artisan make:model Bank
 ```
 
 Generate resource by model:
+
 ```bash
 php artisan make:filament-resource Bank --generate
 ```
 
-##  DEPLOY
+## DEPLOY
+
 storage link
+
 ```
 ln -s /home/u1738662/ppms/storage/app/public/ /home/u1738662/public_html/storage
 ```
 
 db backup cronjob
+
 ```
 mysqldump -t -uu1738662_whjproperty -pnz^.6ahN9]4^ -h127.0.0.1 -t u1738662_whjproperty | gzip > /home/u1738662/backup_database/backup_$(date +"\%Y.\%m.\%d.\%S.\%N").sql.gz
 ```
 
-
 ## Authors
 
-- [@fahmiyonda007](https://www.github.com/fahmiyonda007)
-
+-   [@fahmiyonda007](https://www.github.com/fahmiyonda007)
 
 ## Features
 
-- Light/dark mode toggle
-- Fullscreen mode
-
+-   Light/dark mode toggle
+-   Fullscreen mode
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
