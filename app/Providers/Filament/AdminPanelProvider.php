@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use BezhanSalleh\FilamentExceptions\Resources\ExceptionResource;
 use BezhanSalleh\FilamentLanguageSwitch\FilamentLanguageSwitchPlugin;
 use Exception;
 use Filament\Forms\Components\FileUpload;
@@ -41,18 +40,18 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->favicon(asset('images/favicon.png'))
             ->colors([
-                'primary' => Color::Sky,
+                'primary' => Color::Orange,
             ])
             ->sidebarFullyCollapsibleOnDesktop()
             ->navigationItems([
-                NavigationItem::make('Exceptions')
-                    ->label(ExceptionResource::getNavigationLabel())
-                    ->icon(ExceptionResource::getNavigationIcon())
-                    ->url(env('APP_URL') . '/' . ExceptionResource::getSlug())
-                    ->group(ExceptionResource::getNavigationGroup())
-                    ->badge(ExceptionResource::getNavigationBadge())
-                    ->visible(fn(): bool => auth()->user()->can('view_any_exception'))
-                    ->sort(3),
+                // NavigationItem::make('Exceptions')
+                //     ->label(ExceptionResource::getNavigationLabel())
+                //     ->icon(ExceptionResource::getNavigationIcon())
+                //     ->url(env('APP_URL') . '/' . ExceptionResource::getSlug())
+                //     ->group(ExceptionResource::getNavigationGroup())
+                //     ->badge(ExceptionResource::getNavigationBadge())
+                //     ->visible(fn(): bool => auth()->user()->can('view_any_exception'))
+                //     ->sort(3),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -82,7 +81,7 @@ class AdminPanelProvider extends PanelProvider
             ->plugin(new Lockscreen())
             ->plugins([
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
-                \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
+                // \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
                 BreezyCore::make()
                     ->myProfile(
                         shouldRegisterUserMenu: true,
