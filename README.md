@@ -66,7 +66,7 @@ npm run build && php artisan serve
 create migration file OR Generate migration file from existing table:
 
 ```bash
-php artisan migrate:generate --tables="banks"
+php artisan make:migration create_tablename_table
 ```
 
 Create model and setup manually your field:
@@ -76,9 +76,10 @@ php artisan make:model Bank
 ```
 
 Generate resource by model:
+--simple -> cud by modals
 
 ```bash
-php artisan make:filament-resource Bank --generate
+php artisan make:filament-resource Bank --generate --simple 
 ```
 
 ## DEPLOY
